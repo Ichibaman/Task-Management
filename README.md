@@ -34,7 +34,6 @@ go get github.com/lib/pq
 
 ```
 
-
 3. Create a `.env` file:
 ```env
 DB_HOST=your_local_ip
@@ -47,7 +46,6 @@ PORT=8080
 ALLOWED_ORIGIN=https://your-app.pages.dev
 
 ```
-
 
 4. Start the server: `go run main.go`
 
@@ -100,7 +98,49 @@ bun run dev
 
 ```
 
+Understood. Here is the generalized **Database Setup** section for your `README.md`. This assumes a standard PostgreSQL installation (whether on bare metal, a VM, or a container) and includes the SQL schema based on your Go backend logic.
 
+---
+
+## 🗄️ Database Setup (PostgreSQL)
+
+This project requires a PostgreSQL instance. Follow these steps to prepare your environment.
+
+### 1. Database & User Creation
+
+Run the following SQL commands in your PostgreSQL terminal (`psql`) to set up the database and a dedicated user:
+
+```sql
+-- Create the database
+CREATE DATABASE tech_manager;
+
+-- Create a dedicated user
+CREATE USER postgres WITH ENCRYPTED PASSWORD 'your_password_here';
+
+-- Grant privileges
+GRANT ALL PRIVILEGES ON DATABASE tech_manager TO postgres;
+
+```
+
+### 2. Automated Table Initialization
+You do not need to run SQL scripts for tables. When the backend starts, it automatically executes logic to ensure the following tables exist:
+
+- `users`: Manages authentication and roles (MANAGER, TECHNICIAN).
+
+- `tasks`: Tracks assignments, statuses, and technician IDs.
+
+### 3. Connection Configuration
+
+Update your `backend/.env` file with your credentials:
+
+```env
+DB_HOST=127.0.0.1      # Use 'localhost' or the specific IP of your DB server
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your_password_here
+DB_NAME=tech_manager
+
+```
 
 ---
 
