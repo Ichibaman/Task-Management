@@ -157,7 +157,7 @@ bun run build
 
 ### Cloudflare Tunnel 
 
-This app is designed to be hosted locally and exposed via Cloudflare Tunnel. Ensure your `cloudflared` configuration points to the port defined in your backend `.env` (default `:8080`).
+This backend app and database is designed to be hosted locally and exposed via Cloudflare Tunnel. Ensure your `cloudflared` configuration points to the port defined in your backend `.env` (default `:8080`).
 
 ---
 
