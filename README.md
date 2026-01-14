@@ -51,14 +51,26 @@ ALLOWED_ORIGIN=https://your-app.pages.dev
 
 4. Start the server: `go run main.go`
 
-#### 1.1 Backend Configuration (Docker)
+#### 1.1 Optional Backend Configuration (Docker)
 1. Navigate to the directory: `cd backend`
-2. Build and run using Docker Compose:
+2. Create a .env file:
+```bash
+DB_HOST=your_local_ip
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_NAME=tech_manager
+JWT_SECRET=your_ultra_secret_key
+PORT=8080
+ALLOWED_ORIGIN=https://your-app.pages.dev
+
+```
+3. Build and run using Docker Compose:
 ```bash
 docker compose up -d --build
 
 ```
-3. Verify the connection:
+4. Verify the connection:
 
 ```bash
 docker logs task-management-backend
