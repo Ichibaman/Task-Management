@@ -148,7 +148,7 @@ DB_NAME=tech_manager
 
 ### Production Build
 
-To prepare the frontend for Cloudflare Pages, run the build command which triggers the production environment logic (muting console logs for security):
+To prepare the frontend for Cloudflare Pages, run the build command which triggers the production environment :
 
 ```bash
 bun run build
