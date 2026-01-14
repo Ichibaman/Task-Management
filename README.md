@@ -51,6 +51,20 @@ ALLOWED_ORIGIN=https://your-app.pages.dev
 
 4. Start the server: `go run main.go`
 
+#### 1.1 Backend Configuration (Docker)
+1. Navigate to the directory: `cd backend`
+2. Build and run using Docker Compose:
+```bash
+docker compose up -d --build
+
+```
+3. Verify the connection:
+
+```bash
+docker logs task-management-backend
+
+```
+
 ### 2. Frontend Configuration
 
 1. Navigate to the directory: `cd frontend`
